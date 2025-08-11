@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Silvaa!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #f8edeb 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 90%;
+            margin: 2rem auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header {
+            margin-bottom: 2rem;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            color: pink;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header p {
+            font-size: 1.3rem;
+            color: grey;
+            font-weight: 500;
+        }
+
+        .cake-image {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 8px solid #f1faee;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            margin: 1rem auto;
+            animation: bounce 2s infinite alternate;
+            display: block;
+            background-color: #f8edeb;
+        }
+
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+            padding: 1rem;
+        }
+
+        .photo-gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .photo-gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .message {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            animation: slideUp 1s ease-in-out;
+        }
+
+        .message h2 {
+            color: pink;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .message p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: grey;
+            margin-bottom: 1rem;
+        }
+
+        .music-player {
+            background-color: pink;
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 400px;
+            margin: 2rem auto;
+            animation: fadeIn 2s ease-in-out;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .music-player h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .controls button {
+            background-color: #f1faee;
+            color: #1d3557;
+            border: none;
+            padding: 0.7rem 1.4rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .controls button:hover {
+            background-color:#f8edeb;
+            transform: translateY(-2px);
+        }
+
+        .confetti {
+            position: fixed;
+            width: 12px;
+            height: 12px;
+            top: -10px;
+            opacity: 0;
+            animation: confetti 5s linear infinite;
+            z-index: 0;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-15px); }
+        }
+
+        @keyframes confetti {
+            0% {
+                opacity: 1;
+                top: -10px;
+                transform: rotate(0deg) translateX(0);
+            }
+            100% {
+                opacity: 0;
+                top: 100vh;
+                transform: rotate(720deg) translateX(100px);
+            }
+        }
+
+        footer {
+            margin-top: 2rem;
+            padding: 1rem;
+            color: grey;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            .cake-image {
+                width: 250px;
+                height: 250px;
+            }
+            .photo-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>HAPPY BIRTHDAY!</h1>
+            <p>Semoga hari spesialmu penuh kebahagiaan dan tawa</p>
+        </div>
+
+        <img src="Silva.png" 
+             alt="Kue ulang tahun tiga tingkat dengan hiasan krim warna-warni dan lilin berbentuk angka yang menyala di atasnya" 
+             class="cake-image">
+
+        <div class="photo-gallery">
+            <img src="Iputt.png"
+                 alt="Potret seseorang yang sedang berulang tahun tersenyum bahagia dengan topi pesta dan kacamata dekoratif">
+            
+            <img src="Ipott.png" 
+                 alt="Dekorasi pesta ulang tahun dengan balon warna-warni, bendera kecil, dan confetti di meja">
+           <img src="kueUltah.jpg" 
+                 alt="Kue ulang tahun dengan lilin menyala difoto close-up, latar belakang buram dengan cahaya hangat">
+        </div>
+ <div class="music-player">
+            <h3>Putar Musik!!!</h3>
+            <div class="controls">
+                <button id="playBtn">▶ Putar</button>
+                <button id="stopBtn">◼ Berhenti</button>
+            </div>
+            <audio id="birthdaySong" loop>
+                <source src="soundultah.mp3" type="audio/mpeg">
+                Browser Anda tidak mendukung elemen audio.
+            </audio>
+        </div>
+        <div class="message">
+            <h2> Haii Silva Azkania Putri!!</h2>
+            <p>I hope this year brings you so much happiness, endless opportunities, and everything you’ve been dreaming of. Semoga semua impianmu jadi nyata, dan kamu selalu dikelilingi orang-orang yang tulus sayang sama kamu.</p>
+            <p>Teruslah bersinar dan jadilah versi terbaik dari dirimu sendiri.</p>
+            <p>Thank you!!</p>
+            </div>
+    </div>
+
+    <footer>
+        Dibuat dengan ❤ untuk hari spesialmu
+    </footer>
+
+    <script>
+        // Generate confetti
+        function createConfetti() {
+            const colors = ['#f4a261', '#e9c46a', '#2a9d8f', '#e76f51', '#264653'];
+            for (let i = 0; i < 100; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.animationDuration = Math.random() * 3 + 3 + 's';
+                confetti.style.animationDelay = Math.random() * 5 + 's';
+                document.body.appendChild(confetti);
+            }
+        }
+
+        // Music player functionality
+        const audio = document.getElementById('birthdaySong');
+        const playBtn = document.getElementById('playBtn');
+        const stopBtn = document.getElementById('stopBtn');
+
+        playBtn.addEventListener('click', () => {
+            audio.play();
+            playBtn.textContent = '⏸ Jeda';
+            playBtn.onclick = () => {
+                audio.pause();
+                playBtn.textContent = '▶ Lanjutkan';
+                playBtn.onclick = () => {
+                    audio.play();
+                    playBtn.textContent = '⏸ Jeda';
+                };
+            };
+        });
+
+        stopBtn.addEventListener('click', () => {
+            audio.pause();
+            audio.currentTime = 0;
+            playBtn.textContent = '▶ Putar';
+            playBtn.onclick = () => {
+                audio.play();
+                playBtn.textContent = '⏸ Jeda';
+            };
+        });
+
+        // Initialize confetti and auto play music
+        window.onload = function() {
+            createConfetti();
+            // Uncomment below line to auto play music (might be restricted by browser)
+            // audio.play().catch(e => console.log("Autoplay prevented: ", e));
+        };
+    </script>
+</body>
+</html>
